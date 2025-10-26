@@ -1,25 +1,19 @@
-// ============================================
-// 👥 usuarios.js - LÓGICA DE GESTIÓN DE USUARIOS
-// ============================================
+//S LÓGICA DE GESTIÓN DE USUARIOS
+
 // Lee y modifica datos de datos.js
-// Gestiona altas y bajas de usuarios
 
-// Importamos datos y funciones desde datos.js
-import { usuarios, agregarUsuario, eliminarUsuario } from './datos.js';
+// Importamos los datos desde datos.js
+import { usuarios, agregarUsuario, obtenerNuevoId } from './datos.js';
 
-// ==========================================
-// 🎯 REFERENCIAS A ELEMENTOS DEL DOM
-// ==========================================
+// REFERENCIAS A ELEMENTOS DEL DOM
+
 const formulario = document.getElementById('formUsuario');
-const tablaUsuarios = document.getElementById('tablaUsuarios');
+const tbody = document.getElementById('tablaUsuarios');
 
-// ==========================================
-// 🎨 FUNCIÓN: Renderizar tabla de usuarios
-// ==========================================
-// Muestra todos los usuarios en la tabla HTML
+//  FUNCIÓN: Renderizar tabla de usuarios
+
 function cargarTablaUsuarios() {
-    // Limpiar tabla antes de cargar
-    tablaUsuarios.innerHTML = '';
+    tbody.innerHTML = ''; // Limpiar tabla antes de cargar
     
     // Recorrer array y crear una fila por cada usuario
     usuarios.forEach((usuario, index) => {
@@ -31,46 +25,37 @@ function cargarTablaUsuarios() {
             <td>${usuario.email}</td>
             <td>${usuario.password}</td>
             <td>
-                <button class="btn btn-danger btn-sm" data-id="${usuario.id}">
+                <button class="btn btn-danger btn-sm" data-index="${index}">
                     BORRAR
                 </button>
             </td>
         `;
         
-        tablaUsuarios.appendChild(fila);
+        tbody.appendChild(fila);
     });
-    
+
     // Añadir eventos a los botones de borrar
-    const botonesBorrar = tablaUsuarios.querySelectorAll('.btn-danger');
+    const botonesBorrar = tbody.querySelectorAll('.btn-danger');
     botonesBorrar.forEach(boton => {
         boton.addEventListener('click', function() {
-            const id = parseInt(this.getAttribute('data-id'));
-            borrarUsuario(id);
+            const index = parseInt(this.getAttribute('data-index'));
+            borrarUsuario(index);
         });
     });
 }
 
-// ==========================================
-// 🗑️ FUNCIÓN: Borrar usuario
-// ==========================================
-// Elimina un usuario del array por su ID directamente
-function borrarUsuario(id) {
-    // Usar función de datos.js para eliminar (SIN CONFIRMACIÓN)
-    const exito = eliminarUsuario(id);
+//  FUNCIÓN: Borrar usuario
+
+function borrarUsuario(index) {
+    // Eliminar del array
+    usuarios.splice(index, 1);
     
-    if (exito) {
-        // Recargar tabla
-        cargarTablaUsuarios();
-        console.log(`Usuario ID ${id} eliminado correctamente`);
-    } else {
-        console.error(`Error: No se encontró el usuario con ID ${id}`);
-    }
+    // Recargar tabla
+    cargarTablaUsuarios();
 }
 
-// ==========================================
-// ➕ FUNCIÓN: Alta de usuario
-// ==========================================
-// Captura el submit del formulario y añade un nuevo usuario
+//  FUNCIÓN: Alta de usuario
+
 function altaUsuario(event) {
     event.preventDefault();
     
@@ -79,8 +64,16 @@ function altaUsuario(event) {
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
     
-    // Usar función de datos.js para agregar usuario
-    agregarUsuario(nombre, email, password);
+    // Crear nuevo objeto usuario
+    const nuevoUsuario = {
+        id: obtenerNuevoId(usuarios),
+        nombre: nombre.toUpperCase(),
+        email: email,
+        password: password
+    };
+    
+    // Añadir al array
+    usuarios.push(nuevoUsuario);
     
     // Recargar tabla
     cargarTablaUsuarios();
@@ -88,12 +81,11 @@ function altaUsuario(event) {
     // Limpiar formulario
     formulario.reset();
     
-    console.log(`Usuario ${nombre} agregado. Total de usuarios: ${usuarios.length}`);
+    console.log(`Usuario ${nombre} agregado. Total: ${usuarios.length}`);
 }
 
-// ==========================================
-// 🚀 INICIALIZACIÓN AL CARGAR LA PÁGINA
-// ==========================================
+//INICIALIZACIÓN AL CARGAR LA PÁGINA
+
 document.addEventListener('DOMContentLoaded', function() {
     // Cargar tabla inicial con los datos de datos.js
     cargarTablaUsuarios();
@@ -101,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Registrar evento del formulario
     formulario.addEventListener('submit', altaUsuario);
     
-    console.log('Página de usuarios cargada - Mostrando', usuarios.length, 'usuarios');
+    console.log('Página cargada - Mostrando', usuarios.length, 'usuarios');
 });
 
 // ============================================
@@ -117,5 +109,5 @@ document.addEventListener('DOMContentLoaded', function() {
 // 
 // 5. IA: Claude - Prompt: "Cómo usar data attributes en HTML y leerlos desde JavaScript con getAttribute o dataset"
 // 
-// 6. IA: Claude - Prompt: "Cómo eliminar elementos de un array en JavaScript y actualizar dinámicamente la interfaz sin necesidad de confirmación del usuario"
-// ============================================
+// 6. IA: Claude - Prompt: "Cómo eliminar elementos de un array por índice usando splice en JavaScript"
+
