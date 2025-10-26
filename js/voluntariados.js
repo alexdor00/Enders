@@ -30,6 +30,24 @@ function cargarTablaVoluntariados() {
         
         tbody.appendChild(fila);
     });
+
+     // Añadir eventos a los botones de borrar
+    const botonesBorrar = tbody.querySelectorAll('.btn-danger');
+    botonesBorrar.forEach(boton => {
+        boton.addEventListener('click', function() {
+            const index = parseInt(this.getAttribute('data-index'));
+            borrarVoluntariado(index);
+        });
+    });
+}
+
+
+function borrarVoluntariado(index) {
+    // Eliminar del array
+    voluntariados.splice(index, 1);
+    
+    // Recargar tabla
+    cargarTablaVoluntariados();
 }
 
 
@@ -44,3 +62,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // 1. IA: Claude - Prompt: "cómo importo variables de otro archivo javascript usando import y export?"
 // 2. IA: Claude - Prompt: "cómo recorrer un array de objetos en javascript y crear filas de tabla html dinámicamente?"
+// 3. IA: Claude - Prompt: "cómo eliminar un elemento de un array por su índice en javascript"
