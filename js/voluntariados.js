@@ -1,4 +1,3 @@
-
 // Importamos los datos desde datos.js
 import { voluntariados, obtenerNuevoId } from './datos.js';
 

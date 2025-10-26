@@ -1,20 +1,6 @@
+/* ESTILOS COMUNES A TODAS LAS PÁGINAS
 
-/* 
- * PROMPTS DE IA GENERATIVA UTILIZADOS:
- * 
- * 1. IA: Claude - Prompt: "necesito resetear los estilos por defecto del navegador"
- * 
- * 2. IA: Claude - Prompt: "como configuro la fuente poppins en todo el body"
- * 
- * 3. IA: Claude - Prompt: "estilos para navbar de bootstrap con fondo oscuro y links blancos"
- * 
- * 4. IA: Claude - Prompt: "botones personalizados azul primary y rojo danger con hover"
- * 
- */
-
-/* 
-RESET Y BASE
-*/
+/* RESET Y BASE */
 * {
     margin: 0;
     padding: 0;
@@ -25,12 +11,10 @@ body {
     font-family: 'Poppins', sans-serif;
     background-color: #2c2c2c;
     color: #fff;
+    min-height: 100vh;
 }
 
-/*
-NAVBAR (común a todas las páginas)
-    */
-
+/* NAVBAR (común a todas las páginas) */
 .navbar {
     background-color: #2c2c2c !important;
     padding: 1rem 2rem;
@@ -62,30 +46,55 @@ NAVBAR (común a todas las páginas)
     font-size: 0.95rem;
 }
 
-/*
-BOTONES COMUNES
-   */
+/* BOTONES COMUNES BASE */
 .btn {
     border: none;
-    padding: 1rem 2.5rem;
+    padding: 0.8rem 2rem;
     font-weight: 700;
     text-transform: uppercase;
-    border-radius: 0;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
 }
 
 .btn-primary {
-    background-color: #1e5ba8;
+    background-color: #2962ff;
     color: #fff;
+    border-radius: 4px;
 }
 
 .btn-primary:hover {
-    background-color: #164a8a;
-    transform: translateY(-3px);
+    background-color: #1e4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(41, 98, 255, 0.3);
 }
 
 .btn-danger {
-    background-color: #dc3545;
+    background-color: #ff4444;
     color: #fff;
-    font-size: 0.9; 
+    border-radius: 4px;
+}
+
+.btn-danger:hover {
+    background-color: #cc0000;
+    transform: scale(1.05);
+    box-shadow: 0 2px 6px rgba(255, 68, 68, 0.3);
+}
+
+/* CONTENEDORES */
+.container {
+    max-width: 1400px;
+}
+
+/* ANIMACIÓN BASE */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
     }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+

@@ -21,6 +21,9 @@
 
     <!-- CSS Común -->
     <link rel="stylesheet" href="../css/common.css">
+    
+    <!-- CSS Específico de Voluntariados -->
+    <link rel="stylesheet" href="../css/voluntariados.css">
 </head>
 <body>
 
@@ -52,50 +55,53 @@
         </div>
     </nav>
 
-    <header class="text-center my-5">
-        <h1 class="fw-bold">Gestión de Voluntariados</h1>
-    </header>
-
     <!-- CONTENIDO PRINCIPAL -->
-    <div class="container my-5">
+    <div class="container my-4">
+        
+        <!-- TÍTULO PRINCIPAL -->
+        <div class="text-center mb-4">
+            <div class="bg-secondary bg-opacity-50 py-3 rounded">
+                <h1 class="fw-bold text-uppercase mb-0">Gestión de Voluntariados</h1>
+            </div>
+        </div>
         
         <div class="row">
             
             <!-- COLUMNA IZQUIERDA: FORMULARIO -->
-            <div class="col-lg-6 mb-4">
-                <div class="card bg-dark text-white">
+            <div class="col-lg-5 mb-4">
+                <div class="card text-white">
                     <div class="card-body">
                         <h3 class="card-title text-center mb-4">ALTA DE VOLUNTARIADO</h3>
                         
                         <form id="formVoluntariado">
                             
                             <div class="mb-3">
-                                <label for="titulo" class="form-label fw-bold">TÍTULO</label>
-                                <input type="text" class="form-control bg-secondary text-white border-0" 
+                                <label for="titulo" class="form-label">TÍTULO</label>
+                                <input type="text" class="form-control" 
                                     id="titulo" name="titulo" required>
                             </div>
                             
                             <div class="mb-3">
-                                <label for="usuario" class="form-label fw-bold">USUARIO</label>
-                                <input type="text" class="form-control bg-secondary text-white border-0" 
+                                <label for="usuario" class="form-label">USUARIO</label>
+                                <input type="text" class="form-control"
                                     id="usuario" name="usuario" required>
                             </div>
                             
                             <div class="mb-3">
-                                <label for="fecha" class="form-label fw-bold">FECHA</label>
-                                <input type="date" class="form-control bg-secondary text-white border-0" 
+                                <label for="fecha" class="form-label">FECHA</label>
+                                <input type="date" class="form-control" 
                                     id="fecha" name="fecha" required>
                             </div>
                             
                             <div class="mb-3">
-                                <label for="descripcion" class="form-label fw-bold">DESCRIPCIÓN</label>
-                                <textarea class="form-control bg-secondary text-white border-0" 
+                                <label for="descripcion" class="form-label">DESCRIPCIÓN</label>
+                                <textarea class="form-control" 
                                         id="descripcion" name="descripcion" rows="3" required></textarea>
                             </div>
                             
                             <div class="mb-4">
-                                <label for="tipo" class="form-label fw-bold">TIPO</label>
-                                <select class="form-select bg-secondary text-white border-0" 
+                                <label for="tipo" class="form-label">TIPO</label>
+                                <select class="form-select" 
                                         id="tipo" name="tipo" required>
                                     <option value="peticion" selected>PETICIÓN</option>
                                     <option value="oferta">OFERTA</option>
@@ -111,8 +117,8 @@
                 </div>
             </div>
 
-            <div class="col-lg-6">
-                <div class="card bg-dark text-white">
+            <div class="col-lg-7">
+                <div class="card text-white">
                     <div class="card-body">
                         <h3 class="card-title text-center mb-4">CONSULTA Y BORRADOS DE VOLUNTARIADOS</h3>
                         
@@ -154,7 +160,16 @@
 </body>
 </html>
 
-<!--
+<!--  
     1. IA: Claude - Prompt: "Cómo crear una estructura básica HTML5 con Bootstrap 5? Necesito solo el head con los enlaces de Bootstrap y la fuente Poppins de Google Fonts"
+
     2. IA: Claude - Prompt: "Cómo crear un navbar de Bootstrap con fondo oscuro que tenga 4 enlaces: Dashboard, Login, Voluntariados, Alta Usuario? Y a la derecha debe mostrar el estado de login"
+    
+    3. IA: Claude - Prompt: "cómo crear un formulario con Bootstrap que tenga campos de texto, textarea, select y un botón de envío?"
+    
+    4. IA: Claude - Prompt: "cómo crear una tabla responsive con Bootstrap que muestre datos dinámicos y tenga botones de acción en cada fila"
+    
+    5. IA: Claude - Prompt: "cómo conectar un archivo javascript externo a mi html usando módulos ES6? necesito importar datos desde otro archivo js"
+    
+    6. IA: Claude - Prompt: "cómo hacer que al cargar la página se muestren automáticamente datos de un array en una tabla html usando javascript?"
 -->
