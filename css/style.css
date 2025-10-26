@@ -1,0 +1,152 @@
+/* Definición de variables de color para fácil mantenimiento */
+:root {
+    --color-fondo-principal: #332b26; /* Marrón oscuro / Fondo del Body */
+    --color-fondo-secundario: #493c35; /* Marrón ligeramente más claro / Fondo de las Secciones */
+    --color-titulo: #5f544f; /* Gris oscuro para el banner de título "GESTIÓN DE USUARIOS" */
+    --color-texto: white;
+    --color-input: #69574d; /* Marrón medio para los campos de entrada */
+    --color-baja: #d9534f; /* Rojo fuerte para botón BORRAR */
+    --color-alta: #0d6efd; /* Azul de Bootstrap para DAR DE ALTA */
+    --color-borde-tabla: white;
+}
+
+/* ----------------------------------------------------- */
+/* ESTILOS GENERALES Y LAYOUT */
+/* ----------------------------------------------------- */
+
+.dark-theme {
+    background-color: var(--color-fondo-principal);
+    color: var(--color-texto);
+    min-height: 100vh;
+    padding-top: 20px;
+}
+
+/* ----------------------------------------------------- */
+/* NAVEGACIÓN (Top Bar) */
+/* ----------------------------------------------------- */
+
+.nav-custom {
+    background-color: black; 
+    border-bottom: 2px solid var(--color-fondo-secundario);
+    padding: 10px 15px;
+}
+
+.nav-custom .nav-link {
+    color: var(--color-texto) !important;
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+.nav-custom .nav-link:hover,
+.nav-custom .nav-link.active {
+    color: var(--color-baja) !important; /* Rojo al pasar el ratón o si está activo */
+}
+
+.nav-custom .navbar-text {
+    font-size: 0.9em;
+    color: #aaa !important;
+}
+
+/* ----------------------------------------------------- */
+/* TÍTULO PRINCIPAL (GESTIÓN DE USUARIOS) */
+/* ----------------------------------------------------- */
+
+.title-bg {
+    background-color: var(--color-titulo);
+    padding: 15px 30px !important;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    /* Ajuste para que se parezca más a un banner sólido sin bordes */
+}
+
+.title-bg h2 {
+    font-weight: normal;
+    font-size: 1.5rem;
+}
+
+/* ----------------------------------------------------- */
+/* CONTENIDO: SECCIONES IZQUIERDA Y DERECHA */
+/* ----------------------------------------------------- */
+
+.section-card {
+    /* Fondo de la sección de formulario y tabla */
+    background-color: var(--color-fondo-secundario);
+    padding: 30px !important;
+    border-radius: 0; /* Sin bordes redondeados en el diseño de la imagen */
+}
+
+.section-card h4 {
+    /* Separador entre el título y el contenido (ALTA DE USUARIO) */
+    border-bottom: 1px solid var(--color-texto);
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+/* Estilo para los inputs del formulario */
+.custom-input {
+    background-color: var(--color-input);
+    border: 1px solid var(--color-input);
+    color: var(--color-texto);
+    padding: 10px;
+    height: 40px; /* Tamaño de entrada uniforme */
+}
+
+.custom-input:focus {
+    background-color: var(--color-input);
+    color: var(--color-texto);
+    border-color: var(--color-alta);
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* Botón DAR DE ALTA */
+.custom-btn-blue {
+    background-color: var(--color-alta);
+    border-color: var(--color-alta);
+    font-weight: bold;
+    color: white;
+    padding: 8px 25px;
+}
+
+/* ----------------------------------------------------- */
+/* TABLA DE USUARIOS */
+/* ----------------------------------------------------- */
+
+.custom-table-container {
+    /* Simula el borde blanco alrededor de la tabla */
+    padding: 0; 
+    border: 3px solid var(--color-borde-tabla); 
+}
+
+.custom-table {
+    /* Quitar fondo de Bootstrap y mantener color de texto */
+    --bs-table-bg: transparent; 
+    --bs-table-color: var(--color-texto);
+    margin-bottom: 0; /* Eliminar el margen inferior predeterminado */
+}
+
+.custom-table th, 
+.custom-table td {
+    border: 1px solid var(--color-borde-tabla) !important; /* Bordes de celda blancos */
+    padding: 8px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.custom-table th {
+    font-weight: normal;
+}
+
+/* Estilo del botón BORRAR (ACCIONES) */
+.btn-baja {
+    background-color: var(--color-baja);
+    border-color: var(--color-baja);
+    font-weight: bold;
+    color: white;
+    padding: 5px 15px;
+    font-size: 0.9em;
+}
+
+.btn-baja:hover {
+    background-color: #c9302c; 
+    border-color: #c9302c;
+}

@@ -138,4 +138,26 @@ export function obtenerNuevoId(array) {
     
     return maxId + 1;
 }
+/ Función para añadir un nuevo usuario
+// Utiliza obtenerNuevoId para asignar un ID único
+export function agregarUsuario(nombre, email, password) {
+    const nuevoUsuario = {
+        id: obtenerNuevoId(usuarios), // <-- Usa la función existente
+        nombre: nombre.toUpperCase(),
+        email: email,
+        password: password 
+    };
+    usuarios.push(nuevoUsuario);
+}
 
+// Función para eliminar un usuario por su ID
+export function eliminarUsuario(id) {
+    // Buscar la posición (índice) del usuario con ese ID
+    const index = usuarios.findIndex(u => u.id === id);
+    
+    if (index !== -1) {
+        usuarios.splice(index, 1); // Elimina 1 elemento en esa posición
+        return true;
+    }
+    return false;
+}

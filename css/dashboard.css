@@ -1,0 +1,78 @@
+
+body {
+  background-image: url('../img/gato.png');
+  background-size: cover;       
+  background-position: center;  
+  background-repeat: no-repeat; 
+  background-attachment: fixed; 
+  color: white;
+}
+
+.hero {
+  background-image: url('../img/gato.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 280px;         /* menos alto que antes */
+  position: relative;
+  padding: 2rem 0 0.5rem 0;  /* menos espacio arriba y abajo */
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: transparent; 
+  padding-bottom: 1rem; /* menos espacio debajo del título */
+
+}
+
+.letter-wide { letter-spacing: .08em; }
+
+.btn-pill { 
+  border-radius: 9999px; 
+  padding: .6rem 1.2rem; 
+  font-weight: 700;
+}
+.btn-light-emphasis {
+  background: rgba(255,255,255,.25);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.35);
+}
+.btn-dark-emphasis {
+  background: rgba(0,0,0,.45);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.2);
+}
+.btn-pill.active {
+  outline: 2px solid #fff;
+}
+
+.card-ghost {
+  background: rgba(0, 0, 0, 0.55);     /* transparencia negra */
+  color: #fff;
+  border: 2px solid rgba(0, 0, 0, 0.9); /* borde negro definido */
+  border-radius: 0.8rem;
+  backdrop-filter: blur(10px) saturate(120%);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+/* efecto al pasar el mouse */
+.card-ghost:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.7); /* más oscuro al pasar el cursor */
+}
+.card-ghost .card-title {
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: .04em;
+}
+.card-ghost .dot {
+  margin-right: .5rem;
+}
+
+.bg-black-50 { background: rgba(0,0,0,.5); }
+main.container {
+  margin-top: -1rem; /* sube las tarjetas un poco */
+}
