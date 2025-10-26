@@ -1,3 +1,5 @@
+
+
 # 🐾 Plataforma de Voluntariados - Animal Care
 
 Proyecto web para la gestión de voluntariados de cuidado y rescate animal.
@@ -12,9 +14,11 @@ Aplicación web desarrollada con **HTML5, CSS3, JavaScript y Bootstrap** que per
 
 ## 👥 Equipo
 
-- **[Nombre Compañero 1]** - Dashboard y Login
-- **[Nombre Compañero 2]** - Gestión de Voluntariados
-- **[Nombre Compañero 3]** - Gestión de Usuarios y CSS
+
+- **[daniela montoya muñoz]** -  Dashboard
+- **[Hannibal rabassó domínguez]** -  Login
+- **[Alexandru Mihai Dorobat]** - Gestión de Voluntariados
+- **[Ana Isabella Galasso]** - Gestión de Usuarios
 
 ## 🛠️ Tecnologías Utilizadas
 
