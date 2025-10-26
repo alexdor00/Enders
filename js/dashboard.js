@@ -4,7 +4,7 @@
 import { voluntariados } from './datos.js';
 
 
-// 🎯REFERENCIAS A ELEMENTOS DEL DOM
+// REFERENCIAS A ELEMENTOS DEL DOM
 
 const gridVoluntariados = document.getElementById('gridVoluntariados');
 const btnOferta = document.getElementById('btnOferta');
