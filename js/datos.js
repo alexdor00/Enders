@@ -138,7 +138,7 @@ export function obtenerNuevoId(array) {
     
     return maxId + 1;
 }
-/ Función para añadir un nuevo usuario
+//Función para añadir un nuevo usuario
 // Utiliza obtenerNuevoId para asignar un ID único
 export function agregarUsuario(nombre, email, password) {
     const nuevoUsuario = {
