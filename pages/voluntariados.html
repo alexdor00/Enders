@@ -56,12 +56,101 @@
         <h1 class="fw-bold">Gestión de Voluntariados</h1>
     </header>
 
+    <!-- CONTENIDO PRINCIPAL -->
+    <div class="container my-5">
+        
+        <div class="row">
+            
+            <!-- COLUMNA IZQUIERDA: FORMULARIO -->
+            <div class="col-lg-6 mb-4">
+                <div class="card bg-dark text-white">
+                    <div class="card-body">
+                        <h3 class="card-title text-center mb-4">ALTA DE VOLUNTARIADO</h3>
+                        
+                        <form id="formVoluntariado">
+                            
+                            <div class="mb-3">
+                                <label for="titulo" class="form-label fw-bold">TÍTULO</label>
+                                <input type="text" class="form-control bg-secondary text-white border-0" 
+                                    id="titulo" name="titulo" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="usuario" class="form-label fw-bold">USUARIO</label>
+                                <input type="text" class="form-control bg-secondary text-white border-0" 
+                                    id="usuario" name="usuario" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="fecha" class="form-label fw-bold">FECHA</label>
+                                <input type="date" class="form-control bg-secondary text-white border-0" 
+                                    id="fecha" name="fecha" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="descripcion" class="form-label fw-bold">DESCRIPCIÓN</label>
+                                <textarea class="form-control bg-secondary text-white border-0" 
+                                        id="descripcion" name="descripcion" rows="3" required></textarea>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="tipo" class="form-label fw-bold">TIPO</label>
+                                <select class="form-select bg-secondary text-white border-0" 
+                                        id="tipo" name="tipo" required>
+                                    <option value="peticion" selected>PETICIÓN</option>
+                                    <option value="oferta">OFERTA</option>
+                                </select>
+                            </div>
+                            
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary">DAR DE ALTA</button>
+                            </div>
+                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="card bg-dark text-white">
+                    <div class="card-body">
+                        <h3 class="card-title text-center mb-4">CONSULTA Y BORRADOS DE VOLUNTARIADOS</h3>
+                        
+                        <div class="table-responsive">
+                            <table class="table table-dark table-striped table-bordered">
+                                <thead>
+                                    <tr class="text-center">
+                                        <th>TÍTULO</th>
+                                        <th>USUARIO</th>
+                                        <th>FECHA</th>
+                                        <th>DESCRIPCIÓN</th>
+                                        <th>TIPO</th>
+                                        <th>ACCIONES</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tablaVoluntariados">
+                                    <!-- Las filas se generarán dinámicamente con JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+
+
+
+
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
 
 <!--
-    1. IA: Claude
-    Prompt: "Cómo creo una estructura básica HTML5 con Bootstrap 5? Necesito solo el head con los enlaces de Bootstrap y la fuente Poppins de Google Fonts"
+    1. IA: Claude - Prompt: "Cómo crear una estructura básica HTML5 con Bootstrap 5? Necesito solo el head con los enlaces de Bootstrap y la fuente Poppins de Google Fonts"
+    2. IA: Claude - Prompt: "Cómo crear un navbar de Bootstrap con fondo oscuro que tenga 4 enlaces: Dashboard, Login, Voluntariados, Alta Usuario? Y a la derecha debe mostrar el estado de login"
 -->
